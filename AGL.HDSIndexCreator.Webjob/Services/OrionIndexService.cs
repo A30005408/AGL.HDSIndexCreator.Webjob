@@ -77,6 +77,7 @@ namespace AGL.HDSIndexCreator.Webjob.Services
 
             indexerClient.CreateOrUpdateIndexerAsync(indexer);
 
+
             Console.WriteLine("Running Azure SQL indexer...");
 
             try
