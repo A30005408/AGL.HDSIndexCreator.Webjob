@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace AGL.HDSIndexCreator.Webjob.Models
 {
-    public class ServiceOrderDetails
+    public class ServiceOrder
     {
         [SearchableField(IsFilterable = true, IsSortable = true)]
         [JsonPropertyName("account_number")]

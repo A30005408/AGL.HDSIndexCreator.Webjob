@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AGL.HDSIndexCreator.Webjob.Services
 {
-    public interface IOrionCustomerService
+    public interface IOrionIndexService
     {
         void CreateIndex<T>();
     }

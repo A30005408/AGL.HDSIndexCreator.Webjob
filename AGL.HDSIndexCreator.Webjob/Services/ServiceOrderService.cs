@@ -25,7 +25,7 @@ namespace AGL.HDSIndexCreator.Webjob.Services
 
             Console.WriteLine("Creating index...");
             FieldBuilder fieldBuilder = new FieldBuilder();
-            var searchFields = fieldBuilder.Build(typeof(ServiceOrderDetails));
+            var searchFields = fieldBuilder.Build(typeof(ServiceOrder));
             //var searchIndex = new SearchIndex("serviceorder-sql-idx", searchFields);
             var searchIndex = new SearchIndex("serviceorder-sql-idx", searchFields);
 

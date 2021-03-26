@@ -23,7 +23,7 @@ namespace AGL.HDSIndexCreator.Webjob
             var host = new JobHost(config);
 
             IocContainer = RegisterDependencies();
-            var orionCustomerService = IocContainer.Resolve<IOrionCustomerService>();
+            var orionCustomerService = IocContainer.Resolve<IOrionIndexService>();
             var orionIndexCreator = new OrionIndexCreator(orionCustomerService);
             orionIndexCreator.ExecuteJob();
             host.RunAndBlock();
@@ -32,8 +32,8 @@ namespace AGL.HDSIndexCreator.Webjob
         public static IContainer RegisterDependencies()
         {
             var containerBuilder = new ContainerBuilder();
-            containerBuilder.RegisterAssemblyModules(typeof(IOrionCustomerService).Assembly);
-            containerBuilder.RegisterType<OrionCustomerService>().As<IOrionCustomerService>().SingleInstance();           
+            containerBuilder.RegisterAssemblyModules(typeof(IOrionIndexService).Assembly);
+            containerBuilder.RegisterType<OrionIndexService>().As<IOrionIndexService>().SingleInstance();           
             containerBuilder.RegisterType<LoggerFactory>().As<ILoggerFactory>().SingleInstance();
             containerBuilder.RegisterGeneric(typeof(Logger<>)).As(typeof(ILogger<>)).SingleInstance();          
             return containerBuilder.Build();

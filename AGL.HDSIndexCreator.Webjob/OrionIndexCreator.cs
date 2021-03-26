@@ -10,9 +10,9 @@ namespace AGL.HDSIndexCreator.Webjob
 {
     public class OrionIndexCreator
     {
-        private readonly IOrionCustomerService _orionCustomerService;
+        private readonly IOrionIndexService _orionCustomerService;
 
-        public OrionIndexCreator(IOrionCustomerService orionCustomerService)
+        public OrionIndexCreator(IOrionIndexService orionCustomerService)
         {
             _orionCustomerService = orionCustomerService;
         }
@@ -27,7 +27,9 @@ namespace AGL.HDSIndexCreator.Webjob
 
             var logProvider = loggerFactory.CreateLogger<OrionIndexCreator>();
             logProvider.LogInformation("Orion Customer Index job is calling");
-            _orionCustomerService.CreateIndex<Customer>();            
+            _orionCustomerService.CreateIndex<Customer>();
+            logProvider.LogInformation("ServiceOrder Index job is calling");
+            _orionCustomerService.CreateIndex<ServiceOrder>();
         }
     }
 }

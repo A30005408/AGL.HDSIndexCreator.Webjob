@@ -11,12 +11,12 @@ using System.Net;
 
 namespace AGL.HDSIndexCreator.Webjob.Services
 {
-    public class OrionCustomerService : IOrionCustomerService
+    public class OrionIndexService : IOrionIndexService
     {
         
-        private readonly ILogger<OrionCustomerService> _logger;
+        private readonly ILogger<OrionIndexService> _logger;
 
-        public OrionCustomerService(ILogger<OrionCustomerService> logger)
+        public OrionIndexService(ILogger<OrionIndexService> logger)
         {
             _logger = logger;
         }
